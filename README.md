@@ -57,8 +57,8 @@ A modern, production-ready Next.js starter template featuring Tailwind CSS for s
 
 1. **Clone the repository**
    ```bash
-   git clone https://github.com/yourusername/your-repo-name.git
-   cd your-repo-name
+   git clone https://github.com/dlzvy/nexttailwindshadcnui.git
+   cd nexttailwindshadcnui
    ```
 
 2. **Install dependencies**
