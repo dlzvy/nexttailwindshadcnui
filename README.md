@@ -285,7 +285,7 @@ If you have any questions or need help, feel free to:
 
 - Open an [issue](https://github.com/dlzvy/nexttailwindshadcnui/issues)
 - Start a [discussion](https://github.com/dlzvy/nexttailwindshadcnui/discussions)
-- Reach out on [Twitter](https://twitter.com/yourusername)
+- Reach out on [Twitter](https://twitter.com/XBerryAO)
 
 ---
 
