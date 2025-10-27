@@ -1,17 +1,18 @@
 # Next.js Tailwind CSS shadcn/ui Starter Kit
 
-A modern, production-ready Next.js starter template featuring Tailwind CSS for styling and shadcn/ui for beautiful, accessible components. This project showcases a clean tech stack presentation with dark mode support and smooth animations.
+A modern, production-ready Next.js starter template featuring Tailwind CSS for styling and shadcn/ui for beautiful, accessible components. This project showcases a clean tech stack presentation with dark mode support and smooth animations, powered by the latest Next.js 15 with Turbopack.
 
-![Next.js](https://img.shields.io/badge/Next.js-13.5.1-black?style=for-the-badge&logo=next.js)
-![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-3.3.3-38BDF8?style=for-the-badge&logo=tailwind-css)
-![TypeScript](https://img.shields.io/badge/TypeScript-5.2.2-3178C6?style=for-the-badge&logo=typescript)
-![shadcn/ui](https://img.shields.io/badge/shadcn%2Fui-000000?style=for-the-badge&logo=shadcnui)
+![Next.js](https://img.shields.io/badge/Next.js-15.0.3-black?style=for-the-badge&logo=next.js)
+![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-3.4.15-38BDF8?style=for-the-badge&logo=tailwind-css)
+![TypeScript](https://img.shields.io/badge/TypeScript-5.6.3-3178C6?style=for-the-badge&logo=typescript)
+![shadcn/ui](https://img.shields.io/badge/shadcn%2Fui-0.9.0-000000?style=for-the-badge&logo=shadcnui)
 
 ## Features
 
-- **Next.js 13.5.1** - The React Framework for Production
-- **Tailwind CSS 3.3.3** - Utility-First CSS Framework
-- **shadcn/ui** - Beautifully designed components built on Radix UI
+- **Next.js 15.0.3** - The React Framework for Production with Turbopack
+- **Tailwind CSS 3.4.15** - Utility-First CSS Framework
+- **shadcn/ui 0.9.0** - Beautifully designed components built on Radix UI
+- **Turbopack** - Lightning-fast development server with up to 53% faster builds
 - **Dark Mode Support** - Seamless theme switching with smooth transitions
 - **Responsive Design** - Mobile-first approach with responsive layouts
 - **TypeScript** - Type-safe development experience
@@ -24,27 +25,27 @@ A modern, production-ready Next.js starter template featuring Tailwind CSS for s
 ## Tech Stack
 
 ### Core Framework
-- **Next.js 13.5.1** - React framework with App Router
-- **React 18.2.0** - UI library
-- **TypeScript 5.2.2** - Type safety
+- **Next.js 15.0.3** - React framework with App Router and Turbopack
+- **React 18.3.1** - UI library
+- **TypeScript 5.6.3** - Type safety
 
 ### Styling & UI
-- **Tailwind CSS 3.3.3** - Utility-first CSS framework
-- **shadcn/ui** - Component library built on Radix UI
-- **Lucide React** - Beautiful & consistent icons
+- **Tailwind CSS 3.4.15** - Utility-first CSS framework
+- **shadcn/ui 0.9.0** - Component library built on Radix UI
+- **Lucide React 0.460.0** - Beautiful & consistent icons
 - **Tailwind CSS Animate** - Animation utilities
 
 ### Form Handling & Validation
-- **React Hook Form 7.53.0** - Performant forms
+- **React Hook Form 7.53.2** - Performant forms
 - **Zod 3.23.8** - Schema validation
-- **@hookform/resolvers** - Form validation integration
+- **@hookform/resolvers 3.9.1** - Form validation integration
 
 ### Additional Features
-- **next-themes** - Dark mode support
-- **Recharts** - Chart library
-- **date-fns** - Date utilities
-- **clsx & tailwind-merge** - Utility functions
-- **Sonner** - Toast notifications
+- **next-themes 0.4.3** - Dark mode support
+- **Recharts 2.13.3** - Chart library
+- **date-fns 4.1.0** - Date utilities
+- **clsx 2.1.1 & tailwind-merge 2.5.4** - Utility functions
+- **Sonner 1.7.0** - Toast notifications
 
 ## Quick Start
 
@@ -88,7 +89,7 @@ A modern, production-ready Next.js starter template featuring Tailwind CSS for s
 ├── app/                    # Next.js App Router
 │   ├── globals.css        # Global styles
 │   ├── layout.tsx         # Root layout
-│   └── page.tsx           # Home page
+│   └── page.tsx           # Home page with tech stack showcase
 ├── components/            # React components
 │   └── ui/               # shadcn/ui components
 ├── hooks/                # Custom React hooks
@@ -118,16 +119,25 @@ This starter kit includes 30+ pre-built shadcn/ui components:
 The project includes built-in dark mode support with:
 
 - Automatic system preference detection
-- Manual theme toggle
-- Smooth transitions between themes
+- Manual theme toggle with smooth animations
 - Persistent theme selection
 - Component-level theme awareness
+- Beautiful gradient backgrounds
+
+## Turbopack Performance
+
+This project leverages Next.js 15 with Turbopack for:
+
+- **53% faster local development** startup
+- **94% faster code updates** with Fast Refresh
+- **Optimized bundling** for production builds
+- **Improved caching** for better performance
 
 ## Available Scripts
 
 ```bash
 # Development
-npm run dev          # Start development server
+npm run dev          # Start development server with Turbopack
 npm run build        # Build for production
 npm run start        # Start production server
 npm run lint         # Run ESLint
@@ -167,11 +177,63 @@ All components are fully customizable. Simply copy a component from `components/
 
 ## Deployment
 
-### Vercel (Recommended)
+### Docker (Recommended for Containerized Deployment)
+
+This project includes full Docker support with multi-stage builds for optimal performance.
+
+#### Quick Start with Docker
+
+1. **Development Mode:**
+   ```bash
+   docker-compose up app-dev
+   ```
+   Access your app at [http://localhost:3000](http://localhost:3000)
+
+2. **Development with Turbopack:**
+   ```bash
+   docker-compose --profile turbo up app-turbo
+   ```
+   Access your app at [http://localhost:3002](http://localhost:3002)
+
+3. **Production Mode:**
+   ```bash
+   docker-compose --profile production up app-prod
+   ```
+   Access your app at [http://localhost:3001](http://localhost:3001)
+
+#### Docker Commands
+
+```bash
+# Build and run development container
+docker-compose up app-dev --build
+
+# Run in background
+docker-compose up app-dev -d
+
+# View logs
+docker-compose logs app-dev
+
+# Stop containers
+docker-compose down
+
+# Stop and remove volumes
+docker-compose down -v
+```
+
+#### Docker Configuration
+
+- **Multi-stage build** for optimized image size
+- **Node.js 18 Alpine** for minimal footprint
+- **Non-root user** for security
+- **Health checks** and proper signal handling
+- **Volume mounting** for development
+- **Environment variables** for configuration
+
+### Vercel (Recommended for Serverless)
 
 1. Push your code to GitHub
 2. Connect your repository to [Vercel](https://vercel.com)
-3. Deploy automatically
+3. Deploy automatically with Turbopack optimization
 
 ### Other Platforms
 
@@ -182,6 +244,18 @@ npm run build
 # Start production server
 npm run start
 ```
+
+## What's New in This Version
+
+- **Upgraded to Next.js 15.0.3** with Turbopack support
+- **Updated Tailwind CSS to 3.4.15** with latest utilities
+- **Enhanced shadcn/ui to 0.9.0** with improved components
+- **Added TypeScript 5.6.3** for better type safety
+- **Improved performance** with optimized dependencies
+- **Enhanced dark mode** with smooth transitions
+- **Modern tech stack showcase** page
+- **Full Docker support** with multi-stage builds and development profiles
+- **Container-ready deployment** with optimized Docker configuration
 
 ## Contributing
 
@@ -209,10 +283,10 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 If you have any questions or need help, feel free to:
 
-- Open an [issue](https://github.com/yourusername/your-repo-name/issues)
-- Start a [discussion](https://github.com/yourusername/your-repo-name/discussions)
+- Open an [issue](https://github.com/dlzvy/nexttailwindshadcnui/issues)
+- Start a [discussion](https://github.com/dlzvy/nexttailwindshadcnui/discussions)
 - Reach out on [Twitter](https://twitter.com/yourusername)
 
 ---
 
-If you find this project helpful, please consider giving it a star!
+If you find this project helpful, please consider giving it a ⭐ star!

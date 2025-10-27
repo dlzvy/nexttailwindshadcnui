@@ -1,0 +1,69 @@
+version: '3.8'
+
+services:
+  # Development service
+  app-dev:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: base
+    container_name: nexttailwindshadcnui-dev
+    ports:
+      - "3000:3000"
+    volumes:
+      - .:/app
+      - /app/node_modules
+      - /app/.next
+    environment:
+      - NODE_ENV=development
+      - NEXT_TELEMETRY_DISABLED=1
+    command: >
+      sh -c "corepack enable pnpm && 
+             pnpm install && 
+             pnpm dev"
+    restart: unless-stopped
+
+  # Production service
+  app-prod:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: runner
+    container_name: nexttailwindshadcnui-prod
+    ports:
+      - "3001:3000"
+    environment:
+      - NODE_ENV=production
+      - NEXT_TELEMETRY_DISABLED=1
+    restart: unless-stopped
+    profiles:
+      - production
+
+  # Development with Turbopack
+  app-turbo:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: base
+    container_name: nexttailwindshadcnui-turbo
+    ports:
+      - "3002:3000"
+    volumes:
+      - .:/app
+      - /app/node_modules
+      - /app/.next
+    environment:
+      - NODE_ENV=development
+      - NEXT_TELEMETRY_DISABLED=1
+      - TURBOPACK=1
+    command: >
+      sh -c "corepack enable pnpm && 
+             pnpm install && 
+             pnpm dev --turbo"
+    restart: unless-stopped
+    profiles:
+      - turbo
+
+networks:
+  default:
+    name: nexttailwindshadcnui-network

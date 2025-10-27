@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import { Moon, Sun } from 'lucide-react';
+import { Moon, Sun, Zap, Palette, Layers } from 'lucide-react';
 
 export default function Home() {
   const [isDark, setIsDark] = useState(false);
@@ -41,9 +41,14 @@ export default function Home() {
           }`}>
             Next.js, Tailwind CSS & shadcn/ui
           </p>
+          <p className={`text-sm mt-4 transition-colors duration-300 ${
+            isDark ? 'text-slate-400' : 'text-slate-500'
+          }`}>
+            Powered by Next.js 15 with Turbopack for lightning-fast development
+          </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
           <div className={`group p-8 rounded-2xl shadow-xl transition-all duration-300 ${
             isDark
               ? 'bg-slate-800 hover:bg-slate-750'
@@ -82,6 +87,14 @@ export default function Home() {
               }`}>
                 React Framework for Production
               </p>
+              <div className="flex items-center space-x-2 mt-2">
+                <Zap className="w-4 h-4 text-yellow-500" />
+                <span className={`text-xs transition-colors duration-300 ${
+                  isDark ? 'text-slate-400' : 'text-slate-500'
+                }`}>
+                  v15 with Turbopack
+                </span>
+              </div>
             </div>
           </div>
 
@@ -109,6 +122,14 @@ export default function Home() {
               }`}>
                 Utility-First CSS Framework
               </p>
+              <div className="flex items-center space-x-2 mt-2">
+                <Palette className="w-4 h-4 text-blue-500" />
+                <span className={`text-xs transition-colors duration-300 ${
+                  isDark ? 'text-slate-400' : 'text-slate-500'
+                }`}>
+                  v3.4 Latest
+                </span>
+              </div>
             </div>
           </div>
 
@@ -136,6 +157,92 @@ export default function Home() {
               }`}>
                 Beautifully Designed Components
               </p>
+              <div className="flex items-center space-x-2 mt-2">
+                <Layers className="w-4 h-4 text-purple-500" />
+                <span className={`text-xs transition-colors duration-300 ${
+                  isDark ? 'text-slate-400' : 'text-slate-500'
+                }`}>
+                  Modern UI System
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div className={`p-8 rounded-2xl shadow-xl transition-all duration-300 ${
+          isDark
+            ? 'bg-slate-800'
+            : 'bg-white'
+        }`}>
+          <h2 className={`text-2xl font-bold mb-6 text-center transition-colors duration-300 ${
+            isDark ? 'text-white' : 'text-slate-800'
+          }`}>
+            Performance & Features
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div className="space-y-4">
+              <div className="flex items-start space-x-3">
+                <Zap className="w-5 h-5 text-yellow-500 mt-1 flex-shrink-0" />
+                <div>
+                  <h4 className={`font-semibold transition-colors duration-300 ${
+                    isDark ? 'text-white' : 'text-slate-800'
+                  }`}>
+                    Turbopack Powered
+                  </h4>
+                  <p className={`text-sm transition-colors duration-300 ${
+                    isDark ? 'text-slate-400' : 'text-slate-600'
+                  }`}>
+                    Lightning-fast development server with up to 53% faster builds
+                  </p>
+                </div>
+              </div>
+              <div className="flex items-start space-x-3">
+                <Palette className="w-5 h-5 text-blue-500 mt-1 flex-shrink-0" />
+                <div>
+                  <h4 className={`font-semibold transition-colors duration-300 ${
+                    isDark ? 'text-white' : 'text-slate-800'
+                  }`}>
+                    Modern Styling
+                  </h4>
+                  <p className={`text-sm transition-colors duration-300 ${
+                    isDark ? 'text-slate-400' : 'text-slate-600'
+                  }`}>
+                    Utility-first CSS with dark mode support and responsive design
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div className="space-y-4">
+              <div className="flex items-start space-x-3">
+                <Layers className="w-5 h-5 text-purple-500 mt-1 flex-shrink-0" />
+                <div>
+                  <h4 className={`font-semibold transition-colors duration-300 ${
+                    isDark ? 'text-white' : 'text-slate-800'
+                  }`}>
+                    Component Library
+                  </h4>
+                  <p className={`text-sm transition-colors duration-300 ${
+                    isDark ? 'text-slate-400' : 'text-slate-600'
+                  }`}>
+                    Beautiful, accessible components built with Radix UI
+                  </p>
+                </div>
+              </div>
+              <div className="flex items-start space-x-3">
+                <div className="w-5 h-5 bg-gradient-to-r from-green-500 to-blue-500 rounded-full mt-1 flex-shrink-0" />
+                <div>
+                  <h4 className={`font-semibold transition-colors duration-300 ${
+                    isDark ? 'text-white' : 'text-slate-800'
+                  }`}>
+                    Production Ready
+                  </h4>
+                  <p className={`text-sm transition-colors duration-300 ${
+                    isDark ? 'text-slate-400' : 'text-slate-600'
+                  }`}>
+                    Optimized for performance with TypeScript support
+                  </p>
+                </div>
+              </div>
             </div>
           </div>
         </div>
